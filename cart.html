@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+        padding:10% 20% 10% 20%;
+        border:1px solid black;
+        height: 600px;
+        display:grid;
+        grid-template-columns: 20% 20% 20%;
+        grid-gap:5%;
+    }
+img{
+    width:100%;
+}
+</style>
+<body>
+    <h1>welcome to cart</h1>
+    <div id="products"></div>
+    
+</body>
+</html>
+<script>
+    let parent=document.getElementById("products")
+    //1. get data from localstorage
+    let cart= JSON.parse(localStorage.getItem('cart'));
+    console.log(cart)
+    //2 should show on dom
+    function showproduct(){
+
+cart.forEach((product)=>{
+    console.log(product.product_ID);
+    let div=document.createElement("div");
+    let img=document.createElement("img");
+      img.src=product.product_img;
+    let price=document.createElement("p");
+    price.textContent= product.product_price
+    let description=document.createElement("p")
+    description.textContent=product.product_description;
+    let addtocart_btn=document.createElement("button");
+    addtocart_btn.innerText="ADD TO CART";
+    addtocart_btn.onclick=()=>{
+        addtoCart(product)
+    }
+    div.append(img,price,description,addtocart_btn);
+    parent.append(div)
+});
+
+}
+
+showproduct();
+
+</script>

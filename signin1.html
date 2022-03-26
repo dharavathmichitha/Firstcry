@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+    form{
+        width:10%;
+       
+    }
+    input{
+        margin-top:8%;
+        width:310px;
+        height: 40px;
+        border-radius: 5px;
+        
+    }
+    #cont{
+        width:310px;
+        height: 40px;
+        background-color: orangered;
+        color: white;
+    }
+    #facebook{
+    width:310px;
+    height: 40px;
+    text-align: center;
+justify-content: center;
+}
+#faace{
+ width:30px;
+ height: 30px;
+
+}
+#goog{
+    width:30px;
+    height:30px;
+}
+#faab1{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+   
+    
+}
+#goog1{
+display:flex;
+text-align: center;
+justify-content: center;
+    
+
+}
+a{
+    text-decoration: none;
+}
+</style>
+<body>
+    <div id="fry">
+        <img src="./images/firstcrytag.jfif">
+     </div>
+    
+    <h2>Login/Register</h2>
+    <h4>Email ID/Mobile No</h4>
+    <form onsubmit="signin(event)" id="myform" action="">
+        <input type="text" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="password"/>
+        <input id="cont" type="submit"/>
+    </form>
+    <h2>OR</h2>
+    <div id="facebook">
+        <div id="faab1"> 
+        
+             <img id="faace"src="./images/facebook.png"/>
+            <h2>FACEBOOK</h2>
+         
+        </div>
+        <div id="goog1">
+           <img id="goog" src="./images/google.png"/>
+           <h2 >GOOGLE</h2>
+        </div>
+        <div>
+            <p>New to FirstCry?<a href="signup.html">Register Here</a></p>
+        </div>
+        <hr>
+        <p>By Continuing ,you agree to Firstcry's Conditions of Use and Privacy Notice</p>
+    </div>
+</body>
+</html>
+<script>
+   function signin(e){
+        e.preventDefault()
+
+        let myform=document.getElementById('myform');
+        // console.log(myform)
+        
+        let email=myform.email.value;
+        let password=myform.password.value;
+         let all_users=JSON.parse(localStorage.getItem("users"))
+         //console.log(all_users)
+         all_users.forEach(function(user){
+
+
+
+            if(email===user.email && password===user.password){
+            window.location.href="navbar.html"
+            }
+         });
+   }
+
+</script>

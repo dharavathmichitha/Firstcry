@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frycry</title>
+</head>
+<style>
+    body{
+        margin:0px;
+    }
+   
+    #navbar {
+      display: flex;
+      height: 50px;
+      color:black;
+      background-color:white;
+      padding-top: 10px;
+    }
+    #frycry-logo,
+    #location,
+    #store,
+    #support,
+    #track,
+    #parenting,
+    #login,
+    #Shortlist,
+    #cart
+    {
+     flex:1;   
+    }
+    #searchbar{
+        flex:4;
+        display:flex;
+        padding: 5px;
+        
+    }
+    #logo{
+        width:113px;
+        height: 41px;
+        font-size: 10px;
+    }
+    #search-icon{
+        width:40px;
+        height:40px;
+    }
+    #input{
+        width:100%;
+        border-radius: 5px;
+        
+    }
+    #location{
+        display:flex;
+    }
+    #Shortlist{
+        display: flex;
+    }
+    #cart{
+        display: flex;
+    }
+    #location-icon{
+        width:16px;
+        height:20px;
+    }
+    #shortlist-icon{
+        width:20px;
+        height: 20px;
+    }
+    #cart-icon{
+        width:30px;
+        height:30px;
+    }
+    #navbar-2 {
+      display: flex;
+      background-color:yellow;
+      color: black;
+      height: 50px;
+    }
+
+    #navbar-2 div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 5px;
+      gap:5px;
+    }
+
+
+
+
+
+.slider-box{
+    width:100%;
+    height: 90vh;
+    margin:0;
+    position:relative;
+}
+#slider{
+    width:100%;
+    display: inline-flex;
+    transition: 0.7s;
+}
+#slider img{
+width: 100%;
+}
+.indicators{
+    position:absolute;
+    left:50%;
+    bottom:20px;
+    transform: translate(-50%);
+    overflow: hidden;
+}
+.indicators span{
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    border-radius:50%;
+    background-color: (255, 255 ,255,0.5);
+    cursor:pointer;
+}
+.active{
+    background:white;
+}
+
+#box img {
+      width: 400px;
+      height: 400px;
+      
+    }
+
+    #box {
+      
+      border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  background:whitesmoke;
+  border-radius: 5px;
+
+ 
+}
+    
+    
+    #box div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+    }
+
+ #tab-1{
+    display: grid;
+  grid-template-columns: auto auto auto;
+  
+  padding: 5px;
+}
+
+#box1{
+    padding :20px;
+    background-color:	#d3d3d3;
+    text-align: center;
+}
+#botq{
+    padding:50px;
+    display:grid;
+    background-color: white;
+    width:50%;
+    height: 100px;
+   
+}
+
+#box2{
+    display:flex;
+    gap:10px;
+    padding:50px;
+    text-align: center;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+    color: #484848;
+}
+
+#box3{
+    display:flex;
+    gap:10px;
+    padding:50px;
+    text-align: center;
+    justify-content: center;
+}
+#box4{
+    display:flex;
+    gap:10px;
+    padding:50px;
+    text-align: center;
+    justify-content: center;
+}
+#box5{
+    display:flex;
+    gap:10px;
+    padding:50px;
+    text-align: center;
+    justify-content: center;
+}
+#box6{
+    display:flex;
+    gap:10px;
+    padding:50px;
+    text-align: center;
+    justify-content: center;
+}
+#box7{
+    text-align: center;
+    justify-content: center;
+    
+}
+#box8{
+    overflow:scroll; 
+    width: 100%; 
+    height: 100px; 
+    position: relative;
+     left: 0px;
+      top: 0px;
+      justify-content: center;
+}
+#box8-1{
+    position: absolute;
+     left: 3641px;
+}
+#box8-2{
+    position: absolute; 
+    left: -168px;
+}
+#box9{
+color: orangered;
+border-radius: 20px;
+width:100%;
+height: 100px;
+font-size:30px;
+text-align: center;
+justify-content: center;
+background:whitesmoke;
+}
+#box10{
+    background:	#add8e6;
+}
+#box11{
+    display:flex;
+    
+    text-align: center;
+    justify-content: center;
+    gap:50px;
+}
+#horse,#star,#public,#recycle{
+    width:80px;
+    height:80px;
+    flex:2;
+    padding:20px;
+}
+#box12{
+    
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto; 
+    
+    justify-content: center;
+    text-align: center;
+}
+#fb{
+    width:30px;
+    height: 20px;
+    
+}
+#fb-icon{
+    display:flex;
+    gap: 3px;
+}
+h4{
+color: #484848;
+line-height: 15px;
+text-align: left;
+
+}
+#footer{
+    padding:10px;
+}
+p{
+    color: #484848;
+}
+a{
+    text-decoration: none;
+}
+</style>
+<body>
+    <div id="navbar">
+        <div id="frycry-logo">
+            <img id="logo" src="./images/firstcrytag.jfif">
+
+        </div>
+        <div id="searchbar">
+            <input id="input" type="text" placeholder="Search for a Category Brand or Product"/>
+           <span> <img  id="search-icon"src="./images/searchimage.png"></span>
+
+        </div>
+
+        <div id="location">
+            <img id="location-icon" src="./images/location.png">
+            <div>Select location</div>
+
+        </div>
+        <div id="store">
+            <div>Stores & Preschools</div>
+        </div>
+        <div id="support">
+            <div>Support</div>
+        </div>
+        <div id="track">
+            <div> Track Order</div>
+        </div>
+        <div id="parenting">
+            <div>FirstCry Parenting </div>
+        </div>
+        <div id="login">
+            
+            <div><a href="./signin1.html">Login/Register</a></div>
+        </div>
+        <div id="Shortlist">
+            <img id="shortlist-icon" src="./images/shortlist.png">
+            <div>Shortlist</div>
+        </div>
+        <div id="cart">
+           
+            <img  id="cart-icon"src="./images/cart2.jpg">
+            <div > <a href="./cart.html">Cart</a></div>
+        </div>
+
+    </div>
+    <div id="navbar-2">
+       <div id="categories">
+         <div> <a href="./allcateg.html">ALL CATEGORIES</a></div>
+         <div><a href="./data.html">BOY FASHION</a></div>
+         <div ><a href="./data.html">GIRL FASHION</a></div>
+         <div><a href="./data.html">FOOTWEAR</a></div>
+         <div><a href="./data.html">TOYS</a></div>
+         <div><a href="./data.html">DIAPERING</a></div>
+         <div><a href="./data.html">GEAR</a></div>
+         <div>FEEDING</div>
+         <div>BATH&SKIN</div>
+         <div>NURSERY</div>
+         <div>MOMS</div>
+         <div>HEALTH & SAFETY</div>
+         <div>BOUTIQUES</div>
+         <div>Cart's</div>
+       </div>
+    </div>
+    <div id="main">
+        <div class="slider-box">
+             <div id="slider">
+                 <img src="./images/slide1.jpg">
+                 <img src="./images/slide2.jpg">
+                 <img src="./images/slide3.webp">
+                 <img src="./images/slide.4.gif">
+                 <img src="./images/slide5.webp">
+                 <img src="./images/slide6.webp">
+            </div>
+            <div class="indicators">
+                <span id="btn1" class="active"></span>
+                <span id="btn2"></span>
+                <span id="btn3"></span>
+                <span id="btn4"></span>
+                <span id="btn5"></span>
+                <span id="btn6"></span>
+
+            </div>
+        </div>
+        
+    </div>
+    <div id="box1">
+         <h1>PREMIUM BOUTIQUES</h1>
+        <div id =tab-1>
+            
+            <div id="box">
+                <img src="./images/sportlight1.webp"/>
+                <h3> Not Too Basic upto 24M</h3>
+                <h4>Fancy Onesies & Rompers</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight2.webp"/>
+                <h3>Part Ready Looks 2-4Y</h3>
+                <h4>Party Sets ,Suits & Dresses</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight3.webp"/>
+                <h3>Get this party Started 4-6Y</h3>
+                <h4>Formal Sets,Suits,Dresses & More</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight4.webp"/>
+                <h3>Rock & Roll 6-12Y</h3>
+                <h4>Formal Sets,Suits,Dresses & More</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight5.webp"/>
+                <h3>The Dressy Shoe Up To 12Y</h3>
+                <h4>Partywear & Formal Footwear</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight6.webp"/>
+                <h3>Little Fashionista Up To 12+Y</h3>
+                <h4>Fashion Accessories</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight7.webp"/>
+                <h3>Always Comfy U p To 4Y</h3>
+                <h4>Tops ,Frocks ,Sets & More</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight8.webp"/>
+                <h3>Ready For Occasions</h3>
+                <h4>Ethnic wear For You Li'l Ones</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight9.webp"/>
+                <h3>Trendy Festive Looks 2-4Y</h3>
+                <h4>Ethanic Wear For Your Kids</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight10.webp"/>
+                <h3>Festival Ready 4-6Y</h3>
+                <h4>Ethinc Wear For Them</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight11.webp"/>
+                <h3>Gearing Up For Festival Season 6-12+Y</h3>
+                <h4>Ethinc Wear</h4>
+            </div>
+            <div id="box">
+                <img src="./images/sportlight12.webp"/>
+                <h3>All In One </h3>
+                <h4>Tops,Sets,Bottoms & More</h4>
+            </div>
+    
+            <div id="Botq">
+                   <h3>View all Boutiques</h3>
+            </div>
+            <div id="Botq">
+                <h3>View All Premium Brands</h3>
+            </div>
+               
+        
+        </div>
+
+
+    </div>
+
+    <div id="tab-2">
+        <h2>MOM OF ALL SALE </h2>
+        <div id="box2">
+            <div>
+                <img src="./images/mom1.jpg"/>
+            </div>
+            <div>
+                <img src="./images/mom2.jpg"/>
+            </div>
+
+        </div>
+           <h2>Never Out Of Style</h2>
+        <div id="box3">
+             <div>
+               <img src="./images/explore1.jpg">
+             </div>
+             <div>
+               <img src="./images/explore2.jpg">
+              </div>
+              <div>
+                <img src="./images/explore3.jpg">
+              </div>
+        </div>
+              <h2>Easy Breezy To Extreme Freezy</h2>
+        <div id="box3">
+            <div>
+              <img src="./images/breezy1.jpg">
+            </div>
+            <div>
+               <img src="./images/breezy2.jpg">
+           </div>
+        </div>
+
+        <h2>All Eyes On You</h2>
+        <div id="box4">
+            <div>
+                <img src="./images/eyes1.jpg">
+            </div>
+            <div>
+                <img src="./images/eyes2.jpg">
+            </div>
+            <div>
+               <img src="./images/eyes3.jpg">
+            </div>
+        </div>
+        <h2>BEST OF BRANDS</h2>
+        
+        <div id="box5">
+                <div>
+            <img src="./images/bestbrand1.jpg">
+        </div>
+        <div>
+            <img src="./images/bestbrand2.jpg">
+        </div>
+        <div>
+            <img src="./images/bestbrand3.jpg">
+        </div>
+        </div>
+        <h2>ESSENTIALS STORE</h2>
+        <div id="box6">
+        <div>
+            <img src="./images/ess1.jpg">
+        </div>
+        <div>
+            <img src="./images/ess2.jpg">
+        </div>
+        <div>
+            <img src="./images/ess3.jpg">
+        </div>
+       </div>
+    </div>
+
+<div id="box7">
+    <img src="./images/intellit.jpg"/>
+
+</div>
+<div id="box8">
+       <div  id="box8-1">
+           <nobr> <img src="./images/scrool.jpg"/></nobr>
+        </div>
+       <div id="box8-2">
+           <nobr><img src="./images/scrool2.jpg"></nobr>
+       </div>
+
+</div>
+<div id="box9">
+    <h2>big store for little ones</h2>
+
+</div>
+<div id="box10">
+  <div id="box11">
+       <div>
+             <img id="horse" src="./images/horse.jfif"/>
+             <h3> 2 Lakhs + Unique Products</h3>
+       </div>
+       <div>
+             <img  id="star"src="./images/star.png"/>
+             <h3>5000 Brands</h3>
+        </div>
+        <div>
+              <img  id="public"src="./images/public.jpg"/>
+              <h3>7.5 Million Registered Users</h3>
+        </div>
+        <div>
+              <img  id="recycle"src="./images/recycle.jpg"/>
+               <h3>Easy Return,Replacement
+               & Exchange Policy
+               </h3>
+        </div>
+    
+   </div>
+   <div id="box12">
+       <div>
+           <h3>CATEGORIES</h3>
+           <hr>
+           <p>Clothing & Fashion</p>
+           <p>Toys</p>
+           <p>Books & CDs</p>
+           <p>School Supplies</p>
+           <p>Birthday Party Supplies</p>
+           <p>Baby Diapering</p>
+           <p>Feeding & Nursing</p>
+           <p>Bath & Skin Care</p>
+           <p>Health & Safety</p>
+           <p>Baby Gear</p>
+           <p>Nursery</p>
+           <p>Moms & Maternity</p>
+           <p>Gifts</p>
+           <p>Preschool Admissions</p>
+       </div>
+       <div>
+           <h3>FIRSTCRY PARENTING</h3>
+           <hr>
+           <p>Getting Pregnant</p>
+           <p>Pregnancy</p>
+           <p>Baby</p>
+           <p>Toddler</p>
+           <p>Preschooler</p>
+           <p>Big Kid</p>
+           <p>Vaccination</p>
+           <p>Growth Tracker</p>
+           <p>Bbay Names</p>
+           <p>FirstCry Parenting YouTube</p>
+           
+       </div>
+       <div>
+           <h3>SHIPPING & POLICIES</h3>
+           <hr>
+           <p>Payments</p>
+           <p>Shipping Policy</p>
+           <p>Return & Replacement policy</p>
+           <p>Cancellation POlicy</p>
+           <p>Terms of Use</p>
+           <p>Privacy Policy </p>
+           <p>Next day & Same day delivery</p>
+           <p>Responsible Disclosure</p>
+           
+       </div>
+       <div>
+           <h3>OUR APPS</h3>
+           <hr>
+           <p>FirstCry india :Shopping & Parenting</p>
+           <p>FirstCry india:Shopping & Parenting iOS</p>
+           
+       </div>
+       <div>
+        <h3>COMPANY INFO</h3>
+        <hr>
+        <p>About Us</p>
+        <p>Contact Us</p>
+        <p>Brands</p>
+        <p>F.A.Q.s</p>
+        <p>FirstCry Stores & Preschool</p>
+        
+    </div>
+    <div>
+        <h3>REGIONAL PARENTING</h3>
+        <hr>
+        <p>FirstCry Hindi Parenting</p>
+        <p>FirstCry Marathi Parenting</p>
+        <p>FirstCry Bangla Parenting</p>
+        <p>FirstCry Arabia Parenting</p>
+        <p>FirstCry UAE Parenting</p>
+        
+    </div>
+    <div>
+        <h3>PAYMENT METHOD</h3>
+        <hr>
+        <p>Credit Cards</p>
+        <p>Net Banking</p>
+        <p> ATM & Debit Cards</p>
+        <p>COD(cash on Delivery)</p>
+        <p>Easy EMI</p>
+        
+    </div>
+    <div>
+        <h3>LEARNING & EDUCATION</h3>
+        <hr>
+        <p>intellikits</p>
+        <p>intellitots</p>
+        
+    </div>
+    <div>
+        <h3>SHOP INTERNATIONAL</h3>
+        <hr>
+        <p>FirstCry UAE</p>
+        <p>FirstCry UAE:Shopping & Parenting</p>
+        <p>FirstCry UAE :Shopping & Parenting iOS</p>
+        
+    </div>
+    <div>
+        <h3>KIDS LEARNING & EDUCATIONAL APPS</h3>
+        <hr>
+        <p>PlayBees:Kids Learning & Education App</p>
+        <p>PlayBees:123 Kids Numbers App</p>
+        <p>PlayBees:ABC for Kids</p>
+        
+    </div>
+    <div>
+        <h3>CONNECT WITH US</h3>
+        <hr>
+        <div id="fb-icon">
+        <div>
+            <img  id="fb"src="./images/fb.png"/>
+        </div>
+        <div>
+            <img id="fb" src="./images/insta.png" />
+        </div>
+        <div>
+            <img id="fb" src="./images/twitter.png" />
+        </div>
+        <div>
+            <img id="fb" src="./images/youtube.png" />
+        </div>
+        <div>
+            <img id="fb" src="./images/linkdin.png" />
+        </div>
+        </div>
+        <p>Testmonials</p>
+        <p>SITEMAP</p>
+        <p>LOYALITY CASH</p>
+        
+    </div>
+   </div>
+   <hr>
+   <div id="footer">
+       <h4 >FirstCry India ~ Online Store for Baby & Kids Products</h4>
+       <p>Explore kids and baby products galore at FirstCry.com, the Big Store for Little Ones. We at FirstCry.com empathize with you as a mother who always aspires to bestow her newborn, infant, baby or kid with the best things even for their smallest needs. That is why, 'Mommy Knows Best'. From breastfeeding to bathing essentials, right furniture to myriad baby care products, a mother needs them all for her lil' one. This inspires us to offer convenient & hassle-free online shopping not just for babies & kids but for moms-to-be & new moms as well.
+        With 2 Lakh Baby & Kids Products, 2 Million Happy Customers, and 2 Thousand+ top-notch national and international brands like Babyhug, Pampers, Mamypoko, Huggies, Baby Dove, Sebamed, Himalaya, Philips Avent, Medela, FisherPrice, Carter's, Cute Walk by Babyhug, Kookie Kids, Babyoye, Mark & Mia and more you can look forward to an unparalleled shopping experience with us. Shop for baby & kids products online ranging across diapering, feeding & nursing, skin & health care, baby & kids toys, newborn & infant clothing, baby clothes, kids wear, footwear, fashion accessories, baby gear, nursery, kids furniture, gifts, party supplies, books & CDs, school supplies and more at great discounts.
+        With the FirstCry mobile app, now you can shop on the go! Download the FirstCry Android and the iOS app and Voila!</p>
+        
+        <h4>Newborn & Baby Products Online Shopping in India</h4>
+        <p>Along with all your affection and attention, your little bundle of joy deserves the best when it comes to newborn & baby items. Pamper your lil' one with the widest range of newborn & baby products: right from diapers to potty chairs, onesies to party wear, booties to clogs, carry-cots to baby walkers, rattles to learning toys, FirstCry has it all! FirstCry newborn baby shopping checklist.</p>
+        <h4>Online Shopping for Kids at FirstCry.com</h4>
+        <p>Shopping for your kid is no child's play and thus we help you explore, choose and buy from an exhaustive & finest collection of kids' products. FirstCry buying guides, premium store, boutiques, products checklist, and look-books are all aimed towards an enriching and a fulfilling shopping experience. That's what makes us your go-to online store for kids shopping.</p>
+        <h4>FirstCry Parenting</h4>
+        <p>With FirstCry Parenting, FirstCry isn't just about shopping anymore. No matter if you are a first time parent, or it's you second pregnancy we have you covered. FirstCry Parenting aids you not only as a perplexed parent, but also at each step from Planning to Pregnancy.
+            Learn more about the important vaccines for your child from birth to 12 years, the immunization schedule and have it personalized for your child and never miss a vaccine with our timely notifications.
+            Worried about your child's growth? Don't be! Track your child's height & weight with our child growth tracker and take proactive steps towards your child's healthy growth.
+            Benefit from expert advice, researched articles, Q&A's, tools & trackers and tips from fellow parents and simplify your parenting experience with us.</p>
+        <h4>FirstCry Intellikit</h4>
+        <p>Keep your little one engaged for hours with this age-appropriate fun with learning activity program. FirstCry Intellikit is designed by developmental experts and toy makers to put together unique themed activities every month! Each box contains activities, a story book, flash cards and so much more!
+            With the Intellikit, your child will learn about a vast variety of topics, while enhancing and honing development, all in a fun and interactive way! To see all the past boxes and the current theme, click here.</p>
+        <h4>FirstCry Intellitots Preschoo</h4>
+        <p>From shopping to parenting reads to activity boxes and now schools, FirstCry covers everything from conception to your baby's education! FirstCry Intellitots preschools offer children a unique learning experience through hands-on education that covers life-skills and more. Modeled around the SPARKS' curriculum, children are exposed to quality education and given individual attention. Learn more about all the exciting things happening at our preschools here.</p>
+        <h4>FirstCry India Offers</h4>
+        <p>Satisfaction and Savings come guaranteed with irresistible FirstCry offers & deals on a range of high quality products. These are including but not limited to the FirstCry shopping carnivals, loyalty cash program, app offers, bank & wallet offers, Free @ Three, cashback, Guaranteed savings offers & more.
+            To start with, why not grab some great discounts with the FirstCry coupons and buy baby & kids products online from anywhere in India with Free Shipping, Cash On Delivery (COD), Same & Next day delivery & EZ returns options. Happy Shopping!</p>
+            <p>© 2010-2021 www.FirstCry.com. All rights reserved. This website can be best viewed in resolution width of 1024 and above</p>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script>
+    var slide=document.getElementById("slider");
+    var btn1=document.getElementById("btn1");
+    var btn2=document.getElementById("btn2")
+    var btn3=document.getElementById("btn3")
+    var btn4=document.getElementById("btn4")
+    var btn5=document.getElementById("btn5")
+    var btn6=document.getElementById("btn6")
+    btn1.onclick=()=>{
+        slide.style.transform="translateX(0px)";
+        btn1.classList.add("active");
+        btn2.classList.remove("active")
+        btn3.classList.remove("active")
+        btn4.classList.remove("active")
+        btn5.classList.remove("active")
+        btn6.classList.remove("active")
+    }
+    btn2.onclick=()=>{
+        slide.style.transform="translateX(-100%)";
+        btn1.classList.remove("active")
+        btn2.classList.add("active");
+        btn3.classList.remove("active")
+        btn4.classList.remove("active")
+        btn5.classList.remove("active")
+        btn6.classList.remove("active")
+    }
+    btn3.onclick=()=>{
+        slide.style.transform="translateX(-200%)";
+        btn1.classList.remove("active")
+        btn2.classList.remove("active")
+        btn3.classList.add("active");
+        btn4.classList.remove("active")
+        btn5.classList.remove("active")
+        btn6.classList.remove("active")
+    }
+    btn4.onclick=()=>{
+        slide.style.transform="translateX(-300%)";
+        btn1.classList.remove("active")
+        btn2.classList.remove("active")
+        btn3.classList.remove("active")
+        btn4.classList.add("active");
+        btn5.classList.remove("active")
+        btn6.classList.remove("active")
+    }
+    btn5.onclick=()=>{
+        slide.style.transform="translateX(-400%)";
+        btn1.classList.remove("active")
+        btn2.classList.remove("active")
+        btn3.classList.remove("active")
+        btn4.classList.remove("active")
+        btn5.classList.add("active");
+        btn6.classList.remove("active")
+    }
+    btn6.onclick=()=>{
+        slide.style.transform="translateX(-500%)";
+        btn1.classList.remove("active")
+        btn2.classList.remove("active")
+        btn3.classList.remove("active")
+        btn4.classList.remove("active")
+        btn5.classList.remove("active")
+        btn6.classList.add("active");
+    }
+
+</script>

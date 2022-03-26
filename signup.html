@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+form{
+        width:10%
+    }
+    
+    input{
+        margin-top:8%;
+        width:310px;
+        height: 40px;
+        border-radius: 5px;
+        
+    }
+    #cont{
+        width:310px;
+        height: 40px;
+        background-color: orangered;
+        color: white;
+    }
+</style>
+<body>
+    <div id="fry">
+        <img src="./images/firstcrytag.jfif">
+     </div>
+    <h2>Register</h2>
+    <h1>Signup</h1>
+    <form  onsubmit="signup(event)"  id="myform" action="">
+        <h3>Full Name</h3>
+        <input type="text" id="name" placeholder="Name"/>
+        <h3>Email ID</h3>
+        <input type="text"  id="email" placeholder="Email" />
+        <h3>Password</h3>
+        <input type="password"  id="password" placeholder="password"/>
+        <input id="cont" type="submit"/>
+    </form>
+</body>
+</html>
+
+    
+
+<script>
+    function signup(e){
+        e.preventDefault()
+
+        let myform=document.getElementById('myform');
+        // console.log(myform)
+        let name=myform.name.value;
+        let email=myform.email.value;
+        let password=myform.password.value;
+        //console.log("data:",name,email,password);
+        if(localStorage.getItem('users')===null){
+            localStorage.setItem('users',JSON.stringify([]));
+        }
+        //1.grab and prepare user data
+        let user={
+            name:name,
+            email:email,
+            password:password
+        };
+        let arr=JSON.parse(localStorage.getItem('users'))
+        arr.push(user);
+        localStorage.setItem("users",JSON.stringify(arr));
+
+
+
+    }
+
+</script>

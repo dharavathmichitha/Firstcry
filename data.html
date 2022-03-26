@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #products{
+        padding:10% 20% 10% 20%;
+        
+        
+        display:grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-gap:5%;
+    }
+img{
+    width:100%;
+}
+#sel{
+width:200px;
+height: 38px;
+padding: 4px;
+text-align: left;
+}
+#cloth{
+ overflow: scroll;
+}
+
+</style>
+<body>
+<a href="cart.html"><button>GO TO CART</button></a>
+<div id="products"></div>
+<div>
+  <!-- <div class="cloth">
+    <input/>
+    <div>CLOTHES & SHOES</div>
+    <div>Tops and T-shirts</div>
+    <div>Athleisure & Sportswear</div>
+    <div>Bath Time</div>
+    <div>Caps,Gloves & Mittens</div>
+    <div>Ethnic Wear</div>
+    <div>Footwear</div>
+    <div>Frocks and Dresses</div>
+    <div>Inner Wear & Thermals</div>
+    <div>Nightwear</div>
+    <div>Onesises &Rompers</div>
+  
+  
+  </div>
+<div>
+  <select>
+    <option>CLOTHES & SHOES</option>
+    <option>Tops and T-shirts</option>
+    <option>Athleisure & Sportswear</option>
+  </select>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+<div>
+  <select id="sel">
+    <span>Sort By</span>
+    <option >Best Seller</option>
+    <option>New Arraival</option>
+    <option>Best Seller</option>
+    <option>Discount</option>
+    <option>Price</option>
+    <option>Name</option>
+  </select>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
+<script>
+    
+
+    let data=
+    [{
+        "Product_ID": "9644735",
+        "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9644735a.webp",
+    "product_type":"boys",
+  "product_description":"Babyhug Full Sleeves Hooded Tee Hero Print - Multiprint",
+  "product_price":"449",
+  "product_mrp":"354",
+  "product_color":"skyblue",
+  "product-size":"3-4Y",
+  "product_material":"cotton jersey",
+
+},
+{
+    "Product_ID": "9644779",
+"product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9644779a.webp",
+ "product_type":"boys",
+  "product_description":"Babyhug Full Sleeves Hooded Tee Hero Print - Multiprint",
+  "product_price":"449",
+  "product_mrp":"354",
+  "product_color":"orange",
+  "product-size":"3-4Y",
+  "product_material":"cotton jersey"
+
+},
+{
+    "Product_ID": "9292774",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9644779a.webp",
+ "product_type":"boys",
+  "product_description":"Babyoye Cotton Full Sleeves Tees Pack of 5 - Multicolour",
+  "product_price":"1599",
+  "product_mrp":"1263.21",
+  "product_color":"skyblue",
+  "product-size":"18-24M",
+  "product_material":"cotton"
+
+},
+{
+    "Product_ID": "8689392",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/300x364/8689392a.webp",
+ "product_type":"boys",
+  "product_description":  "Carter's Reindeer Jersey Tee - Green",
+  "product_price":"1149",
+  "product_mrp":"827",
+  "product_color":"green",
+  "product-size":"7-8yY",
+  "product_material":"cotton mixes or cotton poly"
+
+},
+{
+    "Product_ID": "9644804",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9644804a.webp",
+ "product_type":"boys",
+  "product_description":"Babyhug Full Sleeves T-Shirt Ball Print - Blue",
+  "product_price":"399",
+  "product_mrp":"315",
+  "product_color":"red",
+  "product-size":"12-18M",
+  "product_material":"cotton jersey"
+
+},
+{
+    "Product_ID": "3541482",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/3541482a.webp",
+ "product_type":"boys",
+  "product_description":"Earth Conscious Half Sleeves Dice Printed Polo T-Shirt - Navy Blue",
+  "product_price":"449",
+  "product_mrp":"459",
+  "product_color":"blue",
+  "product-size":"5-6Y",
+  "product_material":"cotton jersey"
+
+},
+{
+    "Product_ID": "8605612",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/300x364/8605612a.webp",
+ "product_type":"boys",
+  "product_description":"Ohms Sleeveless T-Shirt Pack Of 3 - Red Yellow Beige",
+  "product_price":"369",
+  "product_mrp":"321",
+  "product_color":"yellow",
+  "product-size":"4-5Y",
+  "product_material":"cotton"
+
+},
+{
+    "Product_ID": "9818941",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/300x364/9818941a.webp",
+ "product_type":"boys",
+  "product_description":"Babyhug Full Sleeves Skivi Tee Stripes - Multicolo",
+  "product_price":"449",
+  "product_mrp":"354",
+  "product_color":"orange",
+  "product-size":"12-18M",
+  "product_material":"cotton "
+
+},
+//winter girl
+{
+    "Product_ID": "10256208",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/10256208a.webp",
+ "product_type":"girls",
+  "product_description":"Doreme Full Sleeves Sweatshirt Text Print - Chilli Red",
+  "product_price":"550",
+  "product_mrp":"550",
+  "product_color":"red",
+  "product-size":"5-6Y",
+  "product_material":"cotton "
+
+},
+{
+    "Product_ID":" 10202456",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/10256208a.webp",
+ "product_type":"girls",
+  "product_description":"UCB Full Sleeves Sweatshirt Sequin Pattern - Pink",
+  "product_price":"1699",
+  "product_mrp":"1699",
+  "product_color":"pink",
+  "product-size":"7-8Y",
+  "product_material":"cotton "
+
+},
+{
+    "Product_ID":" 10256121",
+    
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/10256121a.webp",
+ "product_type":"girls",
+  "product_description":"Doreme Full Sleeves Sweatshirt Text Print - Black",
+  "product_price":"550",
+  "product_mrp":"550",
+  "product_color":"grey",
+  "product-size":"5-6Y",
+  "product_material":"cotton "
+
+},
+{
+    "Product_ID":" 9845495",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9845495a.webp",
+ "product_type":"girls",
+  "product_description":"Babyhug Full Sleeves Sweater Set Multi Print - Navy Blue",
+  "product_price":"499",
+  "product_mrp":"550",
+  "product_color":"blue",
+  "product-size":"9-12M",
+  "product_material":"cotton "
+
+},
+//footware
+{
+    "Product_ID": "9912041",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9912041a.webp",
+ "product_type":"girls",
+  "product_description":"D'chica Ankle Fur Quilted Boots - Black",
+  "product_price":"799",
+  "product_mrp":"631",
+  "product_color":"black",
+  "product-size":"2-2.5y",
+  "product_material":"velvet "
+   
+},
+{
+    "Product_ID": "10365550",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/300x364/10365550a.webp",
+ "product_type":"girls",
+  "product_description":"FEETWELL SHOES LED Party Wear Shoes - White Yellow",
+  "product_price":"1500",
+  "product_mrp":"885",
+  "product_color":"white",
+  "product-size":"2-2.5y",
+  "product_material":"synthetic & TPR "
+   
+},
+
+{
+    "Product_ID": "9014074",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/300x364/10365550a.webp",
+ "product_type":"girls",
+  "product_description":"FEETWELL SHOES LED Party Wear Shoes - White Yellow",
+  "product_price":"2795",
+  "product_mrp":"2096",
+  "product_color":"lightpink",
+  "product-size":"4-4.5y",
+  "product_material":"croslite "
+   
+},
+{
+    "Product_ID": "8935513",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/300x364/8935513a.webp",
+ "product_type":"girls",
+  "product_description":"Babyoye Stripe Flip Flops - Multicolour",
+  "product_price":"299",
+  "product_mrp":"230",
+  "product_color":"pink",
+  "product-size":"3-3.5y",
+  "product_material":"synthetic  "
+   
+},
+//toys
+{
+    "Product_ID": "9353966",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9353966a.webp",
+ 
+  "product_description":"VGRASSP Cute Dancing Dog For Kids (Color May Vary)",
+  "product_price":"1499",
+  "product_mrp":"554",
+  "product_color":"black",
+ "product_Brand":" VGRASSP",
+"product_Type" :" Musical Dancing Dog",
+
+"product_Dimension":" L 8.9 x B 11.9 x H 12.5 cm",
+ "product_Battery": "3 x 1.5V  AAA Shells",
+
+  
+},
+{
+    "Product_ID": " 3129543",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/3129543a.webp",
+ 
+  "product_description":"Yamama Musical Drum Set Toy with Microphone - Multicolour",
+  "product_price":"2999",
+  "product_mrp":"1709",
+  "product_color":"yellow",
+  "product_Brand": " Yamama",
+"product_Type" :" Musical Drum Set",
+"product_Age ":" 12 Months+",
+"Product Dimension" :" 40 x 40 x 20 cm",
+ "product_Battery ": "3 x 1.5 V",
+  
+},
+{
+    "Product_ID": "9325329",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9325329a.webp",
+ 
+  "product_description":"Baby Moo Hanging Musical Toy Soft Rattle - Multicolor",
+  "product_price":"1199",
+  "product_mrp":"1051",
+  "product_color":"yellow",
+  "product_Brand": " Baby Moo",
+"product_Type" :" Hanging Musical Toy",
+"product_Recommended age ":" 0 to 3 Years",
+"product_Dimensions": " L 35 x H 16 cm",
+"Material": "polyester"
+  
+   
+},
+{
+    "Product_ID": "3262008",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/3262008a.webp",
+
+  "product_description":"Zest 4 Toyz 360 Degree Rotating Stunt Tricycle With Bump & Go Action - Multicolor",
+  "product_price":"1499",
+  "product_mrp":"779",
+  "product_color":"vilote",
+  "product_Brand": " Zest 4 Toyz ",      
+ "product_Type": " Tricycle",
+"product_Age":"3 Years+",
+"product_Material":" ABS Plastic",
+"product_ dimensions": " L 19 x B 11 x H 19 cm",
+"product_Battery":" 3 AA 1.5 V Batteries (not included)",
+
+
+},
+//diaper
+{
+"Product_ID": "2855491",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/2855491a.webp",
+
+  "product_description":"Huggies Wonder Pants Diaper Monthly Pack Extra Large Size - 112 Pieces",
+  "product_price":"2999",
+  "product_mrp":"1231",
+  "product_size":"xl",
+  "product_pack":"112",
+   "product_Brand": " Huggies",
+"product_Type":" Pant Style Diapers",
+},
+{
+"Product_ID": "2103268",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/2103268a.webp",
+
+  "product_description":"Pampers All round Protection Pants Extra Large size baby diapers (XL) 112 Count Lotion with Aloe Vera",
+  "product_price":"2399",
+  "product_mrp":"1563",
+  "product_size":"xl",
+  "product_pack":"112",
+   "product_Brand": " Huggies",
+"product_Type":" Pant Style Diapers",
+},
+{
+"Product_ID": "2163908",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/2163908a.webp",
+
+  "product_description":"Huggies Wonder Pants Diaper Monthly Pack Extra Large Size - 112 Pieces",
+  "product_price":"2999",
+  "product_mrp":"1498",
+  "product_size":"xl",
+  "product_pack":"72",
+   "product_Brand": " Huggies",
+"product_Type":" Pant Style Diapers",
+},
+{
+"Product_ID": "9356369",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9356369a.webp",
+
+  "product_description":"Babyhug Advanced Pant Style Diapers Medium Monthly Box Pack - 152 Pieces",
+  "product_price":"2995",
+  "product_mrp":"1115",
+  "product_size":"medium",
+  "product_pack":"152",
+   "product_Brand": " Huggies",
+"product_Type":" Pant Style Diapers",
+},
+//gears
+{
+"Product_ID":"9244268",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9356369a.webp",
+
+  "product_description":"Babyhug Black Hawk Tricycle With Parental Push Handle & Storage Basket - Tiger Orange",
+  "product_price":"4495",
+  "product_mrp":"2607",
+ 
+ "product_Age ":" 12 Months to 3 Years",
+
+
+   "product_Brand":"Babyhug",
+"product_Type":"  Tricycle",
+},
+{
+"Product_ID":"9286851",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9286851a.webp",
+
+  "product_description":"Toyzoy Maple Grand Kids Tricycle with Safety Guardrail - Black & Green",
+  "product_price":"3799",
+  "product_mrp":"2583",
+ 
+ "product_Age ":" 18 Months to 5 Years",
+
+
+   "product_Brand":"Toyzoy",
+"product_Type":"kids Tricycles",
+},
+{
+"Product_ID":" 9339725",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/9339725a.webp",
+
+  "product_description":"Babyhug Black Hawk Tricycle With Parental Push Handle & Storage Basket - Tiger Orange",
+  "product_price":"7995",
+  "product_mrp":"5356",
+ 
+ "product_Age ":"4 to 10 Years",
+
+
+   "product_Brand":"Pine Kids",
+"product_Type":"   Bicycle",
+},
+{
+"Product_ID":"8966587",
+    "product_img":"https://cdn.fcglcdn.com/brainbees/images/products/438x531/8966587a.webp",
+
+  "product_description":"Babyhug Black Hawk Tricycle With Parental Push Handle & Storage Basket - Tiger Orange",
+  "product_price":"2395",
+  "product_mrp":"1604",
+ 
+ "product_Age ":" 12 Months to 3 Years",
+
+
+   "product_Brand":"Babyhug",
+"product_Type":"  Tricycle",
+},
+
+];
+//1 run a foreach loop on products dom
+77//2. append this data on DOM
+//2.1 createElement 
+let parent=document.getElementById('products');
+function showproduct(){
+
+data.forEach((product)=>{
+    console.log(product.product_ID);
+    let div=document.createElement("div");
+    let img=document.createElement("img");
+      img.src=product.product_img;
+    let price=document.createElement("p");
+    price.textContent= product.product_price
+    let description=document.createElement("p")
+    description.textContent=product.product_description;
+    let addtocart_btn=document.createElement("button");
+    addtocart_btn.innerText="ADD TO CART";
+    addtocart_btn.onclick=()=>{
+        addtoCart(product)
+    }
+    div.append(img,price,description,addtocart_btn);
+    parent.append(div)
+});
+
+}
+
+showproduct();
+
+
+
+if(localStorage.getItem("cart")===null) {
+   localStorage.setItem("cart",JSON.stringify([]))
+}
+
+function addtoCart(product){
+     let products_cart=JSON.parse(localStorage.getItem("cart"));
+    
+     products_cart.push(product)
+  
+     localStorage.setItem("cart",JSON.stringify(products_cart))
+    /console.log(products_cart)
+
+}
+
+
+
+
+
+
+
+
+</script>
+
+
