@@ -6,6 +6,7 @@ git clone https://github.com/dharavathmichitha/Firstcry
 
 Go to project directory:-
 cd first-cry
+![firstcry](https://user-images.githubusercontent.com/90394908/160344207-f5ffb40c-c9b4-4113-b316-eafbb1ebe15b.PNG)
 
 Presentation :-
 Demo of project
